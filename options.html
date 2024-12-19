@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab Extension Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .settings-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .settings-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .settings-group h3 {
+            margin-top: 0;
+            color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="color"],
+        input[type="text"],
+        input[type="url"] {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .bookmark-list {
+            margin-top: 10px;
+        }
+
+        .bookmark-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .bookmark-item span {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .bookmark-item button {
+            margin-top: 0;
+            background-color: #dc3545;
+            margin-left: 10px;
+        }
+
+        .bookmark-item button:hover {
+            background-color: #c82333;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h1>New Tab Extension Options</h1>
+        
+        <div class="settings-group">
+            <h3>Background Settings</h3>
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor">
+            
+            <label for="bgImage">Background Image (URL):</label>
+            <input type="text" id="bgImage" placeholder="Enter image URL">
+            <button id="removeBgImage">Remove Background Image</button>
+        </div>
+
+        <div class="settings-group">
+            <h3>Text Settings</h3>
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor">
+            
+            <label for="customMessage">Custom Message:</label>
+            <input type="text" id="customMessage" placeholder="Enter your message">
+        </div>
+
+        <div class="settings-group">
+            <h3>Bookmarks</h3>
+            <div>
+                <label for="bookmarkTitle">Title:</label>
+                <input type="text" id="bookmarkTitle" placeholder="Enter bookmark title">
+                
+                <label for="bookmarkUrl">URL:</label>
+                <input type="url" id="bookmarkUrl" placeholder="Enter URL (e.g., https://www.example.com)">
+                
+                <button id="addBookmark">Add Bookmark</button>
+            </div>
+            <div id="bookmarkList" class="bookmark-list"></div>
+        </div>
+
+        <button id="save">Save All Settings</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+.message-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.countdown {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    font-size: medium;
+    color: #333;
+}
